@@ -1,0 +1,19 @@
+---
+NLog:
+  throwConfigExceptions: true
+  targets:
+    loginfofile:
+      type: File
+      fileName: info.log
+    logerrorfile:
+      type: File
+      fileName: error.log
+  rules:
+  - logger: "*"
+    minLevel: Trace
+    maxLevel: Warning
+    writeTo: loginfofile
+  - logger: "*"
+    minLevel: Error
+    maxLevel: Error
+    writeTo: logerrorfile
